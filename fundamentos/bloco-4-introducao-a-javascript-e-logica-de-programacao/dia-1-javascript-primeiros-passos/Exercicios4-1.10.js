@@ -3,4 +3,4 @@
  - Seu programa também deve emitir uma mensagem de erro e encerrar caso algum dos seus valores de entrada seja menor que zero. */
 
  const custoProduto =
- const valorVenda = 
+ const valorVenda = a

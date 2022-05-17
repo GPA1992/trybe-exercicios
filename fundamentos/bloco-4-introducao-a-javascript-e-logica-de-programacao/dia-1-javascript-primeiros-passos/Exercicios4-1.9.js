@@ -2,9 +2,9 @@
 // Bonus: use somente um if.
 
 
-const num1 = 7;
+const num1 = 6;
 const num2 = 3;
-const num3 = 5;
+const num3 = 4;
       
     if (num1 % 2 != 0 || num2 % 2 != 0 || num3 % 2 != 0){
         console.log(true);
@@ -13,9 +13,9 @@ const num3 = 5;
         console.log(false);
     }
 
+//
 
-
-const num = [7, 4, 5]
+const num = [6, 3, 4]
 let result = num.some(item => item % 2 === 0);
    if("Par"){
        console.log(num.some(item => item % 2 === 0));
