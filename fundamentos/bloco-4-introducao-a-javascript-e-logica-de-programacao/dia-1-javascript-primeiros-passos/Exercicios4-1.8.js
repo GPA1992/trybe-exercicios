@@ -13,5 +13,13 @@ const num3 = 17;
         console.log(false);
     }
     
+//
 
-
+    const num = [7, 4, 5]
+    let result = num.some(item => item % 2 === 0);
+       if("Par"){
+           console.log(num.some(item => item % 2 === 0));
+       }
+       else{
+           console.log(num.some(item => item % 2 != 0));
+       }
