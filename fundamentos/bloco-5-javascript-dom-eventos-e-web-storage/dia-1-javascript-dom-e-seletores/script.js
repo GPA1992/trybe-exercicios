@@ -16,6 +16,7 @@
     // exercicio - 1 
 
      
+<<<<<<< HEAD
     function changeTagP (text){ 
         let tagEscolhida = document.getElementsByTagName('p');
         tagEscolhida[1].innerText = text;
@@ -68,3 +69,56 @@
      }
      showTextTag(); 
      
+=======
+function changeTagP (text){ 
+   let tagEscolhida = document.getElementsByTagName('p');
+   tagEscolhida[1].innerText = text;
+  }
+changeTagP ("Trabalhando como DEV");
+
+    // exercicio 2 - 
+function yellowToGreen (color) {
+    let main = document.getElementsByClassName('main-content');
+    main[0].style.backgroundColor = color;   
+}
+yellowToGreen ('rgb(102, 255, 102)')
+
+      // exercicico 3 - 
+
+function redToWhite (color){
+
+    let center = document.getElementsByClassName('center-content');
+    center[0].style.backgroundColor = color;  
+}
+redToWhite('white')
+    
+      // exercicio 4 
+function fixText (text){
+
+    document.getElementsByTagName('h1')[0].innerText = text;
+}
+fixText ("Exercício 5.1 - JavaScript - UHUUU");    
+    // exercicio 5 -
+      
+function upperTag(tag) {
+ let upper = document.getElementsByTagName(tag);
+    for (let i = 0; i < upper.length; i++){
+
+     upper[i].style.textTransform = "uppercase";
+
+    }
+  }
+  upperTag ('p');
+
+  // exercicio 6       
+  
+  
+  function showTextTag(tag){
+    let showTag = document.getElementsByTagName(tag); 
+    for (let i = 0; i< showTag.length; i++){
+      var mostrarTexto =  showTag[i].innerText;
+    }
+    return mostrarTexto
+}
+showTextTag(); 
+>>>>>>> 4b904968f393f88bebefbd2fa8793163babb58de
