@@ -1,5 +1,3 @@
-
-   const verifyNumber = () => {
         const value1 = document.getElementById('value1').value;
         const value2 = document.getElementById('value2').value;
         if (value1 === '' ||  value2 === '') {
@@ -36,3 +34,4 @@
         const button = document.getElementById('button');
         button.addEventListener('click', sum)
       }
+
