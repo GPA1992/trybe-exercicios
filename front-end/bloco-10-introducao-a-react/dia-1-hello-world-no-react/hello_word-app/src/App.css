@@ -1,0 +1,8 @@
+.helloWorld {
+  display: flex;
+  background-color: grey;
+  color: red;
+  font-size: 200px;
+  text-align: center;
+  justify-content: center;
+}
