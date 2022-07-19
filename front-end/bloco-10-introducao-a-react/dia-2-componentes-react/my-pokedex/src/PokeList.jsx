@@ -10,7 +10,7 @@ class PokeList extends React.Component {
                  <br />
                  { type } 
                  <br />
-                Average Weight: { averageWeight.value } { averageWeight.measurementUnit}
+                Average Weight: { averageWeight.value }{ averageWeight.measurementUnit}
             </div>
             <div>
             <img src={image} alt={this.props.alternativeText} />

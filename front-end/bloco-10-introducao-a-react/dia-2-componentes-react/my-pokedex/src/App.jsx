@@ -7,9 +7,10 @@ class App extends React.Component {
     return(
       <div className="body">
       <h1>POKEDEX</h1>
+      
       <div className="main">
-      { Pokemons.map ((i) => 
-      <PokeList pokemon= { i } />
+      { Pokemons.map ((i) =>
+      <PokeList key={ i.id } pokemon= { i } />
       )}
       </div>
       </div>
