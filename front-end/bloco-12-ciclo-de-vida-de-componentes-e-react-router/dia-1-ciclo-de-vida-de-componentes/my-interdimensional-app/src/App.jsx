@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>
-          Ricky and Morty Characters:
+          Rick and Morty Characters:
         </h1>
       </div>
     );
