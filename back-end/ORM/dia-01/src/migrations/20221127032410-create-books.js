@@ -1,8 +1,7 @@
-'use strict';
+/* eslint-disable max-lines-per-function */
 
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-     return queryInterface.createTable('books', {
+  up: async (queryInterface, Sequelize) => queryInterface.createTable('books', {
        // id: deve ser do tipo integer, não pode ser nula e ser a chave 
        // primária da tabela com auto incremento;
        id: {
@@ -32,11 +31,8 @@ module.exports = {
          type: Sequelize.DATE,
        },
        // updatedAt: deve ser do tipo date e não pode ser nulo;
-       updateAt: {}
-     })
-   },
+       updateAt: {},
+     }),
  
-   down: async (queryInterface, Sequelize) => {
-     return queryInterface.dropTable('books');
-   }
+   down: async (queryInterface, _Sequelize) => queryInterface.dropTable('books'),
  };
