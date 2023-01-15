@@ -1,36 +1,35 @@
-class Student {
-    private _enrollment: string;
-    private _name: string;
-    private _examsGrades: number[] = Array();
-    private _worksGrades: number[] = Array();
-    
-    constructor(enrollment: string, name: string, exames: number[], works:number[] ) {
-        this._enrollment = enrollment;
-        this._name = name;
-        this.examsGrades = exames;
-        this.worksGrades = works;
-    }
+import Person from './Person'
 
-    public get enrollment(): string {
+export default class Student extends Person {
+   private _enrollment = String();
+    
+   private _examsGrades: number[] = [];
+   
+   private _worksGrades: number[] = [];
+   
+   constructor (name: string, birthDate: Date) {
+    super(name, birthDate)
+    this.enrollment = this.generateEnrollment();
+
+   }
+
+    public get enrollment() {
         return this._enrollment;
     }
-    public set enrollment(value: string) {
+    public set enrollment(value) {
+        if(value.length < 16) {
+            throw new Error("Matrícula precisa ter no minimo 16 caracteres")
+        }
         this._enrollment = value;
-    }
-
-    public get name(): string {
-        return this._name;
-    }
-    public set name(value: string) {
-        this._name = value;
     }
 
     public get examsGrades(): number[] {
         return this._examsGrades;
     }
+
     public set examsGrades(value: number[]) {
-        if (value.length !== 4) {
-            throw new Error('A pessoa precisa ter 4 notas de prova')
+        if(value.length !== 4) {
+            throw new Error("Deve ter 4 notas de prova")
         }
         this._examsGrades = value;
     }
@@ -39,14 +38,19 @@ class Student {
         return this._worksGrades;
     }
     public set worksGrades(value: number[]) {
-        if (value.length !== 2) {
-            throw new Error('A pessoa precisa ter 2 notas de trabalho')
+        if(value.length !== 2) {
+            throw new Error("Deve ter 2 notas de trabalho")
         }
         this._worksGrades = value;
     }
 
+    generateEnrollment(): string {
+        const randomStr = String(Date.now() * (Math.random() + 1)).replace(/\W/g, '');
+        return `STU${randomStr}`
+    }
+
     sumGrades(): number {
-        return [...this.examsGrades, ...this.worksGrades].reduce((previous, act) => {
+        return [...this._examsGrades, ...this._worksGrades].reduce((previous, act) => {
             act += previous; 
             return act;
         }, 0)
@@ -57,17 +61,17 @@ class Student {
         const divider = this.examsGrades.length + this.worksGrades.length;
         return sumGrades / divider
     }
+
 }
 
-const student1 = new Student('30', 'Gabriel', [6, 4, 8, 5], [4,5])
+const maria = new Student('Maria', new Date('2005/03/17'))
+const gabriel = new Student('Gabriel', new Date('2005/03/17'))
 
-console.log(student1);
-console.log(student1.sumGrades());
-console.log('media', student1.sumAverage());
+maria.examsGrades = [25, 20, 25, 23]
+gabriel.examsGrades = [25, 20, 25, 23]
+maria.worksGrades = [50, 48]
+gabriel.worksGrades = [50, 47]
 
+console.log(maria);
+console.log(gabriel);
 
-const student2 = new Student('23', 'Maria', [6, 4, 8, 10], [4,5])
-
-console.log(student2);
-console.log(student2.sumGrades());
-console.log('media', student2.sumAverage());
